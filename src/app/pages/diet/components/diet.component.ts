@@ -37,7 +37,6 @@ export class DietComponent implements OnInit, OnDestroy {
           this.collation2 = this.dietHelper.mapMeal(this.diet.json_url.diet.collation2);
           this.dinner = this.dietHelper.mapMeal(this.diet.json_url.diet.dinner);
 
-          console.log(this.breakfast);
           this.gotError = false;
         }, (err: any) => {
           console.log(err);

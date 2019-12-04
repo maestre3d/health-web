@@ -70,10 +70,60 @@
 }
 
 .content {
-    margin: 16px;
+    margin: 0 16px 80px 16px;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
     .items {
+        display: flex;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        flex-flow: row wrap;
+
+
         .meal {
-            margin: 24px;
+            display: flex;
+            display: -moz-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            flex-flow: column wrap;
+
+            margin: 16px;
+            width: 105px;
+            max-width: 108px;
+
+            .descr {
+                font-weight: 700;
+            }
+
+            .quantity {
+                margin-bottom: 8px;
+            }
         }
+    }
+}
+
+.loading-content {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+    flex-flow: column;
+
+    height: 50vh;
+    overflow: hidden;
+
+    justify-content: center;
+    align-items: center;
+
+    .bar {
+        width: 64%;
     }
 }

@@ -6,21 +6,21 @@ export class DietHelper {
     mapMeal(meal: Meals): Array<MealModel> {
         let mealArray: Array<MealModel>;
         mealArray = [
-            {name: 'animal', quantity: meal.animal},
-            {name: 'animalhfat', quantity: meal.animalhfat},
-            {name: 'animalmfat', quantity: meal.animalmfat},
-            {name: 'animallfat', quantity: meal.animallfat},
-            {name: 'cereals', quantity: meal.cereals},
-            {name: 'cerealswfat', quantity: meal.cerealswfat},
-            {name: 'dairy', quantity: meal.dairy},
-            {name: 'dairyskim', quantity: meal.dairyskim},
-            {name: 'fruits', quantity: meal.fruits},
-            {name: 'vegetables', quantity: meal.vegetables},
-            {name: 'legumes', quantity: meal.legumes},
-            {name: 'oils', quantity: meal.oils},
-            {name: 'oilswprotein', quantity: meal.oilswprotein},
-            {name: 'sugars', quantity: meal.sugars},
-            {name: 'sugarswfat', quantity: meal.sugarswfat}
+            {name: 'Origen animal muy pocas calorías', quantity: meal.animal},
+            {name: 'Origen animal altas calorías', quantity: meal.animalhfat},
+            {name: 'Origen animal medio calorías', quantity: meal.animalmfat},
+            {name: 'Origen animal pocas calorías', quantity: meal.animallfat},
+            {name: 'Cereales', quantity: meal.cereals},
+            {name: 'Cereales con grasa', quantity: meal.cerealswfat},
+            {name: 'Lácteos', quantity: meal.dairy},
+            {name: 'Lácteos sin grasa', quantity: meal.dairyskim},
+            {name: 'Frutas', quantity: meal.fruits},
+            {name: 'Vegetales', quantity: meal.vegetables},
+            {name: 'Legumbres', quantity: meal.legumes},
+            {name: 'Aceites', quantity: meal.oils},
+            {name: 'Aceites con proteína', quantity: meal.oilswprotein},
+            {name: 'Azúcares', quantity: meal.sugars},
+            {name: 'Azúcares con grasa', quantity: meal.sugarswfat}
         ];
         return mealArray.filter((item) => item.quantity > 0);
     }
