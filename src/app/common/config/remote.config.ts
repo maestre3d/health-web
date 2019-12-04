@@ -1,3 +1,3 @@
 export const REMOTE_CONFIG = {
-    URL: 'http://localhost:3000/api/v1'
+    URL: 'https://health.damascus-engineering.com:3000/api/v1'
 };

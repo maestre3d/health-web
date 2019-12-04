@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { REMOTE_CONFIG } from '../config/remote.config';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,15 @@ export class AuthService {
 
   getCredentials(): string {
     return localStorage.getItem('access_token');
+  }
+
+  getLoggedUser(): User {
+    if ( !this.getCredentials() ) { return null; }
+
+    return JSON.parse(atob(this.getCredentials().split('.')[1]));
+  }
+
+  logOff(): void {
+    localStorage.removeItem('access_token');
   }
 }

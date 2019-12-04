@@ -11,7 +11,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit, OnDestroy {
   private subject$ = new Subject<void>();
-  tmp = '';
 
   constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) {
     this.route.queryParamMap.pipe(takeUntil(this.subject$)).subscribe(params => {

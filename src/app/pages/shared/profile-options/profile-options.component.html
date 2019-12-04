@@ -1,0 +1,23 @@
+<mat-nav-list>
+    <a routerLink="/account" mat-list-item (click)="openLink($event)">
+        <span mat-line><b>Actualizar</b></span>
+        <span mat-line>Modifica tu perfil</span>
+    </a>
+    
+    <a mat-list-item (click)="onNewDiet()">
+        <span mat-line><b>Nueva dieta</b></span>
+        <span mat-line>Genera una nueva dieta</span>
+    </a>
+    
+    <a mat-list-item (click)="onExit()" class="danger-action">
+        <div class="action-container">
+            <div>
+                <mat-icon fontSet="material-icons-outlined">exit_to_app</mat-icon>
+            </div>
+            <div class="content">
+                <span mat-line><b>Salir</b></span>
+                <span mat-line>Cierra sesión</span>
+            </div>
+        </div>
+    </a>
+</mat-nav-list>    

@@ -3,13 +3,22 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './root/pages.component';
+import { MaterialModule } from '../common/modules/material.module';
+import { CompleteProfileComponent } from './shared/complete-profile/complete-profile.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { ProfileOptionsComponent } from './shared/profile-options/profile-options.component';
 
 
 @NgModule({
-  declarations: [PagesComponent],
+  declarations: [PagesComponent, CompleteProfileComponent, NavbarComponent, ProfileOptionsComponent],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    MaterialModule
+  ],
+  entryComponents: [
+    CompleteProfileComponent,
+    ProfileOptionsComponent
   ]
 })
 export class PagesModule { }

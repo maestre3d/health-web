@@ -1,1 +1,31 @@
-<p>home works!</p>
+<div class="hl-content mat-app-background">
+    <div class="title">
+        <span>Bienvenido</span>
+        <span><b>{{user.name | missingField }}.</b></span>
+    </div>
+    <!-- Main content -->
+    <div class="wrapper">
+        <!-- Main content -->
+        <div class="main-content" role="main">
+            <!-- Menu -->
+            <a class="hl-card mat-elevation-z4" routerLink="/diet">
+                <div class="image"></div>
+                <div class="card-content">
+                    <small class="card-label">FAVORITOS</small>
+                    <span class="card-title">Menú</span>
+                    <span class="card-description">Crea, selecciona y observa tus comidas.</span>
+                </div>
+            </a>
+
+            <!-- Food -->
+            <a class="hl-card mat-elevation-z4" routerLink="/foods">
+                <div class="image" id="foods"></div>
+                <div class="card-content">
+                    <small class="card-label">FAVORITOS</small>
+                    <span class="card-title">Alimentos</span>
+                    <span class="card-description">Descubre nuevos alimentos.</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

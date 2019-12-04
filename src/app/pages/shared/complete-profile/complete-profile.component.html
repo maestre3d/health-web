@@ -1,0 +1,93 @@
+<div class="form-container">
+    <span id="title">Completa tu perfil</span>
+    <form action="post" [formGroup]="signInGroup">
+        <!--
+        <p>
+            <mat-form-field class="register-field" appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Ingresa tu nombre" required
+                formControlName="nameControl" [errorStateMatcher]="nameMatcher"  tabindex="1"
+                >
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('nameControl').hasError('required')">
+                    <ng-container>Nombre es <strong>requerido</strong></ng-container>
+                </mat-error>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('nameControl').hasError('pattern')">
+                    <ng-container>Nombre debe contener sólo caracteres alfanuméricos</ng-container>
+                </mat-error>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('nameControl').hasError('maxlength')">
+                    <ng-container>Nombre sólo puede contener 20 caracteres</ng-container>
+                </mat-error>
+            </mat-form-field>
+        </p>-->
+        <p *ngIf="gotError"><span id="error">Algo ha salido mal.</span></p>
+        <p>
+            <mat-form-field class="register-field" appearance="outline">
+                <mat-label>Peso</mat-label>
+                <input matInput placeholder="Ingresa tu peso" required
+                formControlName="weightControl" [errorStateMatcher]="weightMatcher"  tabindex="2"
+                >
+                <span matSuffix>Kg</span>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('weightControl').hasError('required')">
+                    <ng-container>Peso es <strong>requerido</strong></ng-container>
+                </mat-error>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('weightControl').hasError('pattern')">
+                    <ng-container>Peso debe contener sólo caracteres numéricos</ng-container>
+                </mat-error>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('weightControl').hasError('maxlength')">
+                    <ng-container>Peso sólo puede contener 4 dígitos</ng-container>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="register-field" appearance="outline">
+                <mat-label>Estatura</mat-label>
+                <input matInput placeholder="Ingresa tu estatura" required
+                formControlName="heightControl" [errorStateMatcher]="heightMatcher"  tabindex="3"
+                >
+                <span matSuffix>m.</span>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('heightControl').hasError('required')">
+                    <ng-container>Estatura es <strong>requerida</strong></ng-container>
+                </mat-error>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('heightControl').hasError('pattern')">
+                    <ng-container>Estatura debe contener sólo caracteres numéricos</ng-container>
+                </mat-error>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('heightControl').hasError('maxlength')">
+                    <ng-container>Peso sólo puede contener 4 dígitos</ng-container>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="register-field" appearance="outline">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Ingresa tu fecha de nacimiento" required
+                formControlName="dateControl" [errorStateMatcher]="dateMatcher"  tabindex="4">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error class="animated fadeIn" *ngIf="signInGroup.get('dateControl').hasError('required')">
+                    <ng-container>Fecha de nacimiento es <strong>requerida</strong></ng-container>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <div id="gender">
+            Género
+            <mat-radio-group aria-label="Selecciona un genero" [(ngModel)]="genderEnum" [ngModelOptions]="{standalone: true}">
+                <mat-radio-button value="0" color="primary">Femenino</mat-radio-button>
+                <mat-radio-button value="1" color="primary" style="margin-left: 8px;">Masculino</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Actividad física</mat-label>
+                <mat-select placeholder="Selecciona con qué frecuencia realizas ejercicio" [(ngModel)]="activityEnum" [ngModelOptions]="{standalone: true}">
+                  <mat-option value="0">Ninguna</mat-option>
+                  <mat-option value="1">Muy poca</mat-option>
+                  <mat-option value="2">Regular</mat-option>
+                  <mat-option value="3">Frecuente</mat-option>
+                  <mat-option value="4">Muy frecuente</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </p>
+        <button mat-flat-button color="primary" style="margin-top: 8px; width: 100%; padding: 8px 0; color: #fff;" 
+                (click)="onPost()" [disabled]="(!signInGroup.valid || !genderEnum || !activityEnum ) || isLoading ">Completar</button>
+    </form>
+</div>

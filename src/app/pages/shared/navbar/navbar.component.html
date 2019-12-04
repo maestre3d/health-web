@@ -1,0 +1,21 @@
+<div class="nav-bar mat-app-background mat-elevation-z8">
+    <div class="item">
+        <button mat-icon-button routerLink="/" [ngClass]="(isHome)?'active-link': ''"><mat-icon fontSet="material-icons-outlined">home</mat-icon></button>
+    </div>
+    <div class="item">
+        <button mat-icon-button routerLink="/routines" routerLinkActive="active-link"><mat-icon fontSet="material-icons-outlined">directions_bike</mat-icon></button>
+    </div>
+    <div class="item">
+        <button mat-icon-button routerLink="/offers" routerLinkActive="active-link"><mat-icon fontSet="material-icons-outlined">shopping_cart</mat-icon></button>
+    </div>
+    <div class="item">
+        <button mat-icon-button routerLink="/notifications" routerLinkActive="active-link">
+            <mat-icon fontSet="material-icons-outlined" matBadge="9+" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+    </div>
+    <div class="item">
+        <button mat-icon-button (click)="onProfile()" [ngClass]="(isProfile)?'active-link': ''">
+            <img [src]="profile.image" height="24" width="24" alt="PP" style="border-radius: 100%;">
+        </button>
+    </div>
+</div>

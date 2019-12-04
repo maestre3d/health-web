@@ -1,0 +1,30 @@
+@import 'src/assets/styles/scss/health-theme.scss';
+
+.form-container {
+    padding: 8px;
+
+    #title {
+        font-size: x-large;
+        font-weight: 700;
+    }
+
+    p, #gender {
+        margin: 4px;
+    }
+
+    #gender {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        margin-bottom: 16px;
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
+
+    #error {
+        color: $warn;
+    }
+}

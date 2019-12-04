@@ -13,15 +13,10 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
-        path: 'notfound',
+        path: '**',
         loadChildren: () => import('../shared/not-found/not-found.module').then(m => m.NotFoundModule)
       }
     ]
-  },
-  {
-    path: '**',
-    redirectTo: 'notfound',
-    pathMatch: 'full'
   }
 ];
 

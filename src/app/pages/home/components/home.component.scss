@@ -1,0 +1,96 @@
+@import 'src/assets/styles/scss/health-theme.scss';
+
+
+.hl-content {
+    display: flex;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    .title {
+        display: flex;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+
+        flex-flow: column;
+
+        padding: 24px;
+
+        span {
+            font-size: x-large;
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    flex-flow: column;
+    padding: 0 0 80px 0;
+}
+
+.main-content {
+    width: 100%;
+
+    .hl-card {
+        display: flex;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+
+        flex-flow: column;
+
+        border-radius: 15px;
+
+        margin: 16px 24px;
+        max-width: 400px;
+
+        cursor: pointer;
+
+        .image {
+            height: 308px;
+            width: 100%;
+            background: #404040 url('~/assets/img/common/undraw_Chef_cu0r.svg') no-repeat;
+            background-size: contain;
+            border-radius: 15px 15px 0 0;
+        }
+
+        #foods {
+            background: #404040 url('~/assets/img/common/undraw_healthy_options_sdo3.svg') no-repeat;
+            background-size: contain;
+        }
+
+
+        .card-content {
+            display: flex;
+            display: -moz-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+
+            flex-flow: column;
+
+            padding: 16px 8px;
+
+            .card-label {
+                color: $gray;
+            }
+
+            .card-title {
+                font-weight: 700;
+                font-size: x-large;
+            }
+
+            .card-description {
+                font-size: small;
+                color: $gray;
+            }
+        }
+    }
+}
