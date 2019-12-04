@@ -4,6 +4,7 @@ import { AuthService } from './auth.service';
 import { PersonalViewModel } from 'src/app/pages/shared/complete-profile/models/personalview.model';
 import { REMOTE_CONFIG } from '../config/remote.config';
 import { Observable } from 'rxjs';
+import { DietModel } from '../models/diet.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,12 +29,20 @@ export class UserService {
     return this.http.put(`${REMOTE_CONFIG.URL}/account/info`, payload, { headers });
   }
 
+  getUserDiet(): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.authService.getCredentials()}`
+    });
+
+    return this.http.get(`${REMOTE_CONFIG.URL}/account/diet`, { headers });
+  }
+
   generateUserDiet(): Observable<any> {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.authService.getCredentials()}`
     });
 
-    return this.http.patch(`${REMOTE_CONFIG.URL}/account/diet`, { headers });
+    return this.http.put(`${REMOTE_CONFIG.URL}/account/diet`, {}, { headers });
   }
 
   refreshSession(): Observable<any> {

@@ -1,0 +1,79 @@
+@import 'src/assets/styles/scss/health-theme.scss';
+
+.hl-content {
+    display: flex;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+
+    height: 100vh;
+    .toolbar {
+        display: flex;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+
+        flex-flow: column;
+
+        padding: 24px;
+
+        span {
+            font-size: large;
+        }
+
+        .title {
+            display: flex;
+            display: -moz-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            flex-flow: row wrap;
+            
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    flex-flow: column;
+    height: inherit;
+    padding: 0 0 80px 0;
+
+    .calories {
+        bottom: 0;
+        position: fixed;
+        display: flex;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        padding: 0 0 64px 0;
+        background-color: $accent;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.main-content {
+    width: 100%;
+    z-index: 0;
+}
+
+.content {
+    margin: 16px;
+    .items {
+        .meal {
+            margin: 24px;
+        }
+    }
+}
