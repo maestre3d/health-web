@@ -7,8 +7,6 @@ import { MaterialModule } from '../common/modules/material.module';
 import { CompleteProfileComponent } from './shared/complete-profile/complete-profile.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ProfileOptionsComponent } from './shared/profile-options/profile-options.component';
-import { AuthInterceptor } from '../common/interceptors/auth.interceptor';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,11 +21,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ProfileOptionsComponent
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
   ]
 })
 export class PagesModule { }

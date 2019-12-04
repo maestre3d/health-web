@@ -17,6 +17,10 @@ const routes: Routes = [
         loadChildren: () => import('./diet/diet.module').then(m => m.DietModule)
       },
       {
+        path: 'foods',
+        loadChildren: () => import('./foods/foods.module').then(m => m.FoodsModule)
+      },
+      {
         path: '**',
         loadChildren: () => import('../shared/not-found/not-found.module').then(m => m.NotFoundModule)
       }

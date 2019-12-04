@@ -34,15 +34,11 @@ export class UserService {
       Authorization: `Bearer ${this.authService.getCredentials()}`
     });
 
-    return this.http.get(`${REMOTE_CONFIG.URL}/account/diet`, { headers });
+    return this.http.get(`${REMOTE_CONFIG.URL}/account/diet`);
   }
 
   generateUserDiet(): Observable<any> {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.authService.getCredentials()}`
-    });
-
-    return this.http.put(`${REMOTE_CONFIG.URL}/account/diet`, {}, { headers });
+    return this.http.put(`${REMOTE_CONFIG.URL}/account/diet`, {});
   }
 
   refreshSession(): Observable<any> {

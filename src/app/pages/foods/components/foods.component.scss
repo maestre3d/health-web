@@ -1,0 +1,110 @@
+@import 'src/assets/styles/scss/health-theme.scss';
+
+.hl-content {
+    display: flex;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+
+    height: 100vh;
+    .toolbar {
+        display: flex;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+
+        flex-flow: column;
+
+        padding: 24px;
+
+        span {
+            font-size: large;
+        }
+
+        .title {
+            display: flex;
+            display: -moz-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            flex-flow: row wrap;
+            
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    flex-flow: column;
+    height: inherit;
+    padding: 0 0 80px 0;
+}
+
+.main-content {
+    width: 100%;
+    z-index: 0;
+}
+
+.loading-content {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+    flex-flow: column;
+
+    height: 50vh;
+    overflow: hidden;
+
+    justify-content: center;
+    align-items: center;
+
+    .bar {
+        width: 64%;
+    }
+}
+
+.categories-container {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+    flex-flow: row wrap;
+    padding: 14px;
+}
+
+.error-container {
+    text-align: center;
+    color: $gray;
+}
+
+.food-card {
+    max-width: 350px;
+    margin: 16px 8px;
+
+    .food {
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+    
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+    
+        .detail {
+            display: flex;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+    
+            flex-flow: column;
+        }
+    }
+}

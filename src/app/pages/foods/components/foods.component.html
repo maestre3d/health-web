@@ -1,0 +1,46 @@
+<div class="hl-content mat-app-background">
+    <div class="toolbar">
+        <div class="title">
+            <button mat-icon-button routerLink="/"><mat-icon>arrow_back</mat-icon></button>
+            <span><b>Alimentos</b></span>
+            <span style="padding-left: 32px;"></span>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="wrapper">
+        <div class="categories-container animated fadeIn fast">
+            <mat-chip-list aria-label="Food categories">
+                <mat-chip (click)="onSearch()" color="primary" selected>Todo</mat-chip>
+                <mat-chip (click)="onSearch('vegetables')">Verduras</mat-chip>
+                <mat-chip (click)="onSearch('fruits')">Frutas</mat-chip>
+                <mat-chip (click)="onSearch('animal')">Origen animal</mat-chip>
+            </mat-chip-list>
+        </div>
+        <div class="main-content" role="main">
+            <ng-container *ngIf="!isLoading; else loadingTemplate">
+                <ng-container *ngIf="foods && !gotError; else errorTemplate">
+                    <mat-card *ngFor="let food of foods" class="food-card mat-elevation-z4 animated fadeIn fast" style="animation-delay: 300ms;">
+                        <div class="food">
+                            <div class="detail">
+                                <b>{{food.name}}</b>
+                                <span style="text-transform: uppercase; font-size: small;">{{food.measurement}}</span>
+                            </div>
+                            <button mat-icon-button><mat-icon>keyboard_arrow_right</mat-icon></button>
+                        </div>
+                    </mat-card>
+                </ng-container>
+                <ng-template #errorTemplate>
+                    <div class="error-container animated fadeIn fast">
+                        <h3>No se encontraron alimentos</h3>
+                    </div>
+                </ng-template>
+            </ng-container>
+            <ng-template #loadingTemplate>
+                <div class="loading-content">
+                    <div class="bar"><mat-progress-bar mode="indeterminate"></mat-progress-bar></div>
+                </div>
+            </ng-template>
+            
+        </div>
+    </div>
+</div>
