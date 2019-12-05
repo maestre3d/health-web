@@ -1,1 +1,121 @@
-<p>diet works!</p>
+<div class="hl-content mat-app-background">
+    <div class="toolbar">
+        <div class="title">
+            <button mat-icon-button routerLink="/"><mat-icon>arrow_back</mat-icon></button>
+            <span><b>Menú</b></span>
+            <span style="padding-left: 32px;"></span>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="wrapper">
+        <!-- Main content -->
+        <div class="main-content" role="main">
+            <mat-tab-group>
+                <!-- Monday -->
+                <mat-tab label="Lunes">
+                  <ng-template matTabContent>
+                      <ng-container *ngIf="!isLoading; else loadingTemplate">
+                            <ng-container *ngIf="!gotError || !diet; else errorTemplate">
+                                <div class="content animated fadeIn fast">
+                                    <h2>Desayuno</h2>
+                                    <div class="items">
+                                        <mat-card class="meal mat-elevation-z4" *ngFor="let meal of breakfast;">
+                                            <div class="quantity">{{meal.quantity}}</div>
+                                            <div class="descr">{{meal.name}}</div>
+                                        </mat-card>
+                                    </div>
+                                    <h2>Colacion matutina</h2>
+                                    <div class="items">
+                                        <mat-card class="meal mat-elevation-z4" *ngFor="let meal of collation1;">
+                                            <div class="quantity">{{meal.quantity}}</div>
+                                            <div class="descr">{{meal.name}}</div>
+                                        </mat-card >
+                                    </div>
+                                    <h2>Comida</h2>
+                                    <div class="items">
+                                        <mat-card class="meal mat-elevation-z4" *ngFor="let meal of meals;">
+                                            <div class="quantity">{{meal.quantity}}</div>
+                                            <div class="descr">{{meal.name}}</div>
+                                        </mat-card>
+                                    </div>
+                                    <h2>Colacion vespertina</h2>
+                                    <div class="items">
+                                        <mat-card class="meal mat-elevation-z4" *ngFor="let meal of collation2;">
+                                            <div class="quantity">{{meal.quantity}}</div>
+                                            <div class="descr">{{meal.name}}</div>
+                                        </mat-card>
+                                    </div>
+                                    <h2>Cena</h2>
+                                    <div class="items">
+                                        <mat-card class="meal mat-elevation-z4" *ngFor="let meal of dinner;">
+                                            <div class="quantity">{{meal.quantity}}</div>
+                                            <div class="descr">{{meal.name}}</div>
+                                        </mat-card>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-template #errorTemplate>
+                                <span>Something went wrong.</span>
+                            </ng-template>
+                      </ng-container>
+                      <ng-template #loadingTemplate>
+                          <div class="loading-content"><div class="bar"><mat-progress-bar mode="indeterminate"></mat-progress-bar></div></div>
+                      </ng-template>
+                      
+
+                  </ng-template>
+                </mat-tab>
+
+                <!-- Tuesday -->
+                <mat-tab label="Martes">
+                  <ng-template matTabContent>
+                    <div>
+                        Martes Content
+                    </div>
+                  </ng-template>
+                </mat-tab>
+
+                <!-- Wednesday -->
+                <mat-tab label="Miércoles">
+                    <ng-template matTabContent>
+                        <div>
+                            Miercoles Content
+                        </div>
+                    </ng-template>
+                </mat-tab>
+
+                <!-- Thursday -->
+                <mat-tab label="Jueves">
+                    <ng-template matTabContent>
+                        <div>
+                            Jueves Content
+                        </div>
+                    </ng-template>
+                </mat-tab>
+
+                <!-- Saturday -->
+                <mat-tab label="Sábado">
+                    <ng-template matTabContent>
+                        <div>
+                            Sabado Content
+                        </div>
+                    </ng-template>
+                </mat-tab>
+
+                <!-- Sunday -->
+                <mat-tab label="Domingo">
+                    <ng-template matTabContent>
+                        <div>
+                            Domingo Content
+                        </div>
+                    </ng-template>
+                </mat-tab>
+
+              </mat-tab-group>
+        </div>
+
+        <div class="calories animated slideInUp fast" *ngIf="!isLoading && !gotError">
+            <span><b>Calorías Totales:</b> {{diet.total_calories}}</span>
+        </div>
+    </div>
+</div>

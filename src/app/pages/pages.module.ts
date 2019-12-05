@@ -19,6 +19,8 @@ import { ProfileOptionsComponent } from './shared/profile-options/profile-option
   entryComponents: [
     CompleteProfileComponent,
     ProfileOptionsComponent
+  ],
+  providers: [
   ]
 })
 export class PagesModule { }
